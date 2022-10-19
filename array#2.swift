@@ -1,3 +1,5 @@
+import Foundation
+
 func RotateElemsInArray(array:[Int]) {
     var helper: [Int] = array
     print("wprowadzono tablice wyjsciowa: ", helper)
@@ -27,11 +29,15 @@ func RotateElemsInArray(array:[Int]) {
 }
 
 print("wpisz tablice(liczby wstawiaj po przecinku)")
-let data = readLine()!;
-var arr = data.split(separator: ",");
+var data = readLine()!;
+var arr = data.components(separatedBy: ",");
 var arr2:[Int] = [];
 for i in arr{
-    arr2.append(Int(String(i))!)
+        let charNumber = Int(i) 
+        if(charNumber != nil){
+        arr2.append(Int(i)!)
+        }
+
 }
 
 RotateElemsInArray(array:arr2)

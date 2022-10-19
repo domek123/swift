@@ -54,7 +54,7 @@ taliaComputer.insert(talia.removeFirst())
 
 print(taliaUser,taliaComputer)
 
-while(true){
+while(talia.count>0){
     if(graUser == true){
         print("Gracz")
         var s = ""
@@ -95,9 +95,10 @@ if(PerskieOczko(t:taliaUser)){
 else if(PerskieOczko(t:taliaComputer)){
     print("komputer wygral")
 }
-else if(getPoints(t:taliaUser)>=21 && getPoints(t:taliaComputer)>=21){
-    print("brak zwycięzcy")
-}else if(getPoints(t:taliaUser)<=21 && getPoints(t:taliaComputer)<=21){
+else if(getPoints(t:taliaUser) == getPoints(t:taliaComputer)){
+    print("remis")
+}
+else if(getPoints(t:taliaUser)<=21 && getPoints(t:taliaComputer)<=21){
     if(21-getPoints(t:taliaUser)>21-getPoints(t:taliaComputer)){
         print("komputer wygral")
     }else{
@@ -107,6 +108,8 @@ else if(getPoints(t:taliaUser)>=21 && getPoints(t:taliaComputer)>=21){
     print("komputer wygral")
 }else if(getPoints(t:taliaUser)<=21 && getPoints(t:taliaComputer)>=21){
     print("gracz wygral")
+}else if(getPoints(t:taliaUser)>=21 && getPoints(t:taliaComputer)>=21){
+    print("brak zwycięzcy")
 }else{
     print("remis")
 }
